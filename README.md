@@ -10,4 +10,4 @@ Python chat robot script that supports chatgpt3.5 is simple and easy to use
 ------
 
 #### 使用预览 
-![image](img/PyGPT35.png)
+![image](PyGPT35.png)
