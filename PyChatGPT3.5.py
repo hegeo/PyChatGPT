@@ -28,14 +28,12 @@ def openai_reply(content):
 if __name__ == '__main__':
     print("Welcome to ChatGPT 3.5") 
     print("If you want to exit, please enter 'quit'") #Enter "quit" when prompted to terminate the chat
-    print("") 
     print("Please enter your question!")
-    print("") 
     
     turns = [] #Set a list variable, where turn refers to the turn of the conversation
     
     while True: #Ability to continuously ask questions
-        question = input("Me：")
+        question = input("\nMe：")
         if len(question.strip()) == 0: #If the input is blank, remind me of the input problem
             print("The content is empty, please re-enter.")
         elif question == "quit":  #If the input is "quit", the program terminates
@@ -45,8 +43,8 @@ if __name__ == '__main__':
             if len(turns) <= 10 :
                 turns +=  [{"role": "user", "content": question}]     
                 answer = openai_reply(turns)
-                print("AI：" + answer)
+                print("\nAI：" + answer)
                 turns +=  [{"role": "system", "content": answer}]
             else:
-                print("AI：I don't want to discuss this issue anymore, please ask again!")
+                print("\nAI：I don't want to discuss this issue anymore, please ask again!")
                 turns = []
